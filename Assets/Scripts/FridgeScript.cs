@@ -6,6 +6,7 @@ using UnityEngine;
 public class FridgeScript : MonoBehaviour
 {
     private GameObject player;
+    public GameObject steakPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,20 @@ public class FridgeScript : MonoBehaviour
     void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "Player") {
             gameObject.GetComponentInParent<Animator>().SetBool("playerInRange", false);
+        }
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (other.gameObject.tag == "Player") {
+            if (Input.GetKey(KeyCode.E) && !player.GetComponent<PlayerScript>().HoldingFood) {
+                Debug.Log("Getting Food");
+                
+                GameObject steak = Instantiate(steakPrefab, player.transform);
+                steak.transform.position += new Vector3(0, 1.1f, 0);
+                steak.transform.localScale = new Vector3(8, 8, 8);
+
+                player.GetComponent<PlayerScript>().HoldingFood = true;
+            }
         }
     }
 }

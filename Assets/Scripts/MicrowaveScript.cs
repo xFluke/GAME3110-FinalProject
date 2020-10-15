@@ -20,7 +20,6 @@ public class MicrowaveScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            Debug.Log("yuh");
             gameObject.GetComponentInParent<Animator>().SetBool("playerInRange", true);
         }
     }

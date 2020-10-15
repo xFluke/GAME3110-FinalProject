@@ -8,6 +8,10 @@ public class PlayerScript : MonoBehaviour
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
 
+    private bool holdingFood = false;
+
+    public bool HoldingFood { get { return holdingFood; } set { holdingFood = value; } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,4 +31,5 @@ public class PlayerScript : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
     }
+
 }
