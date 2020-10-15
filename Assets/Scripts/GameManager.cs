@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         else
         for(int i = 1; i < customerList.Count; i++)
             {
-                customerList[i].GetComponent<NavMeshAgent>().SetDestination(new Vector3(-9f , 1.5f, (0.8f + i)));   
+                customerList[i].GetComponent<NavMeshAgent>().SetDestination(new Vector3(-9f , 1.5f, (0.8f + i*2)));   
             }
     }
 
