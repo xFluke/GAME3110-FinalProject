@@ -192,6 +192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f8471678f0b8845a7375dc75b879c3, type: 3}
+--- !u!1 &663162482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 606950930828019070, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
+  m_PrefabInstance: {fileID: 606011614102279298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +289,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &725241411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 607611175433522098, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
+  m_PrefabInstance: {fileID: 606011614102279298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &874182848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874182849}
+  m_Layer: 0
+  m_Name: FoodSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874182849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874182848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2094972823}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 17.51, z: -5.16}
+  m_LocalPosition: {x: 0, y: 19.95, z: -5.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -398,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerSpawnPoint: {fileID: 1974064077}
   customerPrefab: {fileID: 7102662278868653212, guid: 5098655185867884ca096ee5826e061e, type: 3}
+  customerList: []
 --- !u!4 &997390300
 Transform:
   m_ObjectHideFlags: 0
@@ -778,6 +819,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2094972823 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 610746170501204520, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
+  m_PrefabInstance: {fileID: 606011614102279298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &606011614102279298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -785,9 +831,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 606011615032369245, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
+      propertyPath: emptyMicrowave
+      value: 
+      objectReference: {fileID: 663162482}
+    - target: {fileID: 606011615032369245, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
+      propertyPath: fullMicrowave
+      value: 
+      objectReference: {fileID: 725241411}
+    - target: {fileID: 606011615032369245, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
+      propertyPath: cookedSteakPrefab
+      value: 
+      objectReference: {fileID: 1000012081886716, guid: 0b2c2c6617d3fb54ab69e7ff4da40867, type: 3}
+    - target: {fileID: 606950930828019070, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 607523702838218728, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
       propertyPath: m_Name
       value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 607611175433522098, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 610746170501204520, guid: 03c8ccb81cccf1648a6ab69f33a3e2d9, type: 3}
       propertyPath: m_LocalPosition.x

@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public enum ItemInHand {
+        EMPTY,
+        RAW_STEAK,
+        COOKED_STEAK
+    };
+
     public float speed = 6.0f;
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
 
-    private bool holdingFood = false;
+    //private bool holdingFood = false;
 
-    public bool HoldingFood { get { return holdingFood; } set { holdingFood = value; } }
+    //public bool HoldingFood { get { return holdingFood; } set { holdingFood = value; } }
+    public ItemInHand itemInHand = ItemInHand.EMPTY;
 
     // Start is called before the first frame update
     void Start()
@@ -31,5 +38,4 @@ public class PlayerScript : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
     }
-
 }

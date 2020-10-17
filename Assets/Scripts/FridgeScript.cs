@@ -34,14 +34,14 @@ public class FridgeScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "Player") {
-            if (Input.GetKey(KeyCode.E) && !player.GetComponent<PlayerScript>().HoldingFood) {
+            if (Input.GetKey(KeyCode.E) && player.GetComponent<PlayerScript>().itemInHand == PlayerScript.ItemInHand.EMPTY) {
                 Debug.Log("Getting Food");
                 
                 GameObject steak = Instantiate(steakPrefab, player.transform);
                 steak.transform.position += new Vector3(0, 1.1f, 0);
                 steak.transform.localScale = new Vector3(8, 8, 8);
 
-                player.GetComponent<PlayerScript>().HoldingFood = true;
+                player.GetComponent<PlayerScript>().itemInHand = PlayerScript.ItemInHand.RAW_STEAK;
             }
         }
     }
