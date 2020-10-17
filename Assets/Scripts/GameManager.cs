@@ -29,13 +29,7 @@ public class GameManager : MonoBehaviour
     void SpawnCustomer() {
         GameObject customer = Instantiate(customerPrefab, customerSpawnPoint.transform.position, Quaternion.identity);
         customerList.Add(customer);
-        if(customerList.Count <= 1)
-            customer.GetComponent<NavMeshAgent>().SetDestination(customerFinalDestination);
-        else
-            for(int i = 1; i < customerList.Count; i++) {
-                customerList[i].GetComponent<NavMeshAgent>().SetDestination(customerFinalDestination + new Vector3(0, 0, i * 2));   
-            }
-
+        customer.GetComponent<NavMeshAgent>().SetDestination(customerFinalDestination + new Vector3(0, 0, (customerList.Count - 1) * 2));
     }
 
 }
